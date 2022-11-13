@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:13:20 by ciclo             #+#    #+#             */
-/*   Updated: 2022/10/14 04:21:58 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/11/08 22:18:43 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
+/// @brief Función principal de ft_printf.
+/// @param str
+/// @param
+/// @return el numero de caracteres impreso
 int	ft_printf(char const *str, ...)
 {
 	size_t		i;
