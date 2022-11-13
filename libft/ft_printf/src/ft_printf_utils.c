@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 13:52:16 by ciclo             #+#    #+#             */
-/*   Updated: 2022/10/14 14:10:45 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/11/13 17:05:40 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_formats(va_list arg, char c)
 	else if (c == 's')
 		x += ft_putstr(va_arg(arg, char *));
 	else if (c == 'd' || c == 'i')
-		x += ft_print_int(va_arg(arg, int));
+		x += ft_putnbr(va_arg(arg, int));
 	else if (c == 'x')
 		x += ft_printf_hex(va_arg(arg, unsigned int));
 	else if (c == 'X')
@@ -53,9 +53,7 @@ size_t	ft_putstr(char *str)
 	}
 	i = 0;
 	while (str[i])
-	{
 		ft_putchar(str[i++]);
-	}
 	return (i);
 }
 

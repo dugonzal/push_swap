@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/06 16:32:11 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/09 18:03:30 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdio.h>
 #include "../ft_printf/include/ft_printf.h"
 // Part
+
+/// @brief estcructura linkelist
 typedef struct s_list
 {
 	void			*content;
