@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/13 16:08:48 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/14 17:34:48 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "../libft/include/libft.h"
 
 void	error_msg(char *s, int n);
-void	errores_argc(int ac);
-void	checker_errors(int ac, char **av);
+t_list	*create_stack_a(t_list *a, const char **av, int ac);
 
 #endif
