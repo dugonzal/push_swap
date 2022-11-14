@@ -6,13 +6,9 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/12 20:35:45 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/14 17:35:14 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/// @brief  control de errores
-/// @param s mensaje de error
-/// @param n numero de error
 

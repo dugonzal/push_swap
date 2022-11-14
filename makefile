@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/01 20:54:24 by vscode            #+#    #+#              #
-#    Updated: 2022/11/13 22:39:07 by ciclo            ###   ########.fr        #
+#    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
+#    Updated: 2022/11/14 19:53:53 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,14 @@ FLAGS := -Wall -Werror -Wextra
 SRC_DIR := src/
 OBJ_DIR := obj/
 # *****************#
-#-------debuggers--#
-#------debuggers---#
+#----debuggers-----#
 # *****************#
 SANI := -fsanitize=address -g3
 val :=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FILES := push_swap utils errors
+SRC_FILES := push_swap utils errors create_stack
 
 SRC := $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-#aprend.er mas sobre objetos
 OBJ := $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 OBJF := .cache_exists
@@ -40,7 +38,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
 	@$(CC) $(FLAGS) -c $< -o $@
-	@echo "$@ done compile $<"
+	@echo "$@ done compile"
 # -c compila el codigo pero no lo linkea
 # -o es para poner el nombre del archivo de salida
 # $< es el primer elemento de la lista de dependencias de la regla obj

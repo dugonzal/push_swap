@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/13 22:38:23 by ciclo            ###   ########.fr        #
+#    Updated: 2022/11/14 19:43:23 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ FTMEM_DIR	=	ft_mem/
 FTMEM		=	ft_bzero ft_calloc ft_memchr ft_memcmp ft_memmove ft_memset
 
 FTSTR_DIR	=	ft_str/
-FTSTR		=	ft_strlen
+FTSTR		=	ft_strlen ft_strchr ft_strdup ft_striteri ft_strjoin ft_strlcat ft_strlen ft_strlcpy ft_strncmp ft_strnstr ft_strrchr ft_strtrim ft_substr ft_split
 
 FTPUT_DIR	=	ft_put/
 FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd
