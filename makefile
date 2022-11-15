@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
+#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/14 19:53:53 by ciclo            ###   ########.fr        #
+#    Updated: 2022/11/15 19:49:23 by dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ val :=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 SRC_FILES := push_swap utils errors create_stack
 
 SRC := $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ := obj/push_swap.o utils errors create_stack
 OBJ := $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 OBJF := .cache_exists
