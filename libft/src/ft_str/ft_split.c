@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:59:54 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/16 01:32:13 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /// @param s The string to be split.
 /// @param c The delimiter character.
 /// @return The array of new strings resulting from the split. NULL if the
-static int	ft_count_words(char const *str, char c)
+int	ft_count_words(char const *str, char c)
 {
 	int	i;
 	int	count;

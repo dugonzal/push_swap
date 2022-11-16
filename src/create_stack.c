@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:33:53 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/15 23:51:16 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/11/16 01:44:24 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,15 @@ static void	control_errors(const char **s, int j, int i)
 	}
 }
 
+const char	**two_arguments(const char **av)
+{
+	char	**str;
+
+	str = ft_split(av[1], ' ');
+	av = (const char **)str;
+	return (av);
+}
+
 t_list	*create_stack_a(t_list *a, const char **av, int ac)
 {
 	int		i;
@@ -58,6 +67,12 @@ t_list	*create_stack_a(t_list *a, const char **av, int ac)
 	int		*tmp;
 
 	i = 1;
+	if (ac == 2)
+	{
+		ac = ft_count_words(av[1], ' ');
+		av = two_arguments(av);
+		i = 0;
+	}
 	while (i < ac)
 	{
 		j = 0;
@@ -69,8 +84,6 @@ t_list	*create_stack_a(t_list *a, const char **av, int ac)
 		if (number_repeat(a, tmp))
 			error_msg("Error", 2);
 		ft_lstadd_back(&a, ft_lstnew(tmp));
-		if (ac == 2 || ac == 1)
-			break ;
 		i++;
 	}
 	return (a);
