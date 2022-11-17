@@ -6,13 +6,20 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/17 19:23:10 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/17 19:41:26 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+static const char **two_rguments(const char **av)
+{
+	char **str;
 
+	str = ft_split(av[1], ' ');
+	av = (const char **)str;
+	return (av);
+}
 
 int	main(int ac, const char **av)
 {
@@ -22,9 +29,17 @@ int	main(int ac, const char **av)
 
 	i = 1;
 	a = NULL;
+	if (ac == 2)
+	{
+		ac = ft_count_words(av[1], ' ');
+		av = two_rguments(av);
+		i = 0;
+	}
 	while (i < ac)
 	{
 		err (av, i);
+		if (ac == 1)
+			exit (0);
 		tmp = (int *)malloc(sizeof(int));
 		*tmp = ft_atoi(av[i]);
 		repeat (a, tmp);
