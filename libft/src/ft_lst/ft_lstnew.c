@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:57:51 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/13 15:55:03 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/17 14:20:10 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 /// @return The new element.
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	*tmp;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
+	tmp = (t_list *)malloc(sizeof(t_list));
+	if (!tmp)
 		return (0);
-	new->next = 0;
-	new->content = content;
-	return (new);
+	tmp->next = NULL;
+	tmp->content = content;
+	return (tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:45:03 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 00:54:48 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/17 14:21:19 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 /// @return void
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*aux_lst;
+	t_list	*tmp;
 
 	if (new)
 	{
@@ -29,7 +29,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			*lst = new;
 			return ;
 		}
-		aux_lst = ft_lstlast(*lst);
-		aux_lst->next = new;
+		tmp = ft_lstlast(*lst);
+		tmp->next = new;
 	}
 }

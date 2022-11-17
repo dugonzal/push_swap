@@ -27,7 +27,7 @@ You can use this library in your code by cloning this repository and compiling i
 
 ##  What is libft?
 
-> _Libft is an individual project at [42](https://42.fr/) that consists of recoding a set of the standard C library functions, as well as other utility functions that are useful for any C program._
+> _Libft is an individual project at [42](https://42urduliz.com/) that consists of recoding a set of the standard C library functions, as well as other utility functions that are useful for any C program._
 
 ## List of functions:
 
@@ -60,6 +60,8 @@ To clean all files generated while doing a make, go to the path and run:
 ```shell
  make fclean
 ```
+
+<h4>examples</h4>
 
 ```c
 #include "libft.h"
