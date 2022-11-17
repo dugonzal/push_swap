@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/14 19:43:23 by ciclo            ###   ########.fr        #
+#    Updated: 2022/11/17 14:40:58 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,6 @@ $(NAME):	$(OBJS)
 			@echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)# | $(INCLUDES) directory if you want to use header files
-			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
 			@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJSF):#  create the directory for the objects if it doesn't exist mkdir -p para que no de error si ya existe

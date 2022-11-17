@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:00:13 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/13 22:42:30 by ciclo            ###   ########.fr        #
+#    Updated: 2022/11/17 14:23:49 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,10 @@ OBJF := .cache_exists
 #Rules of compilation and linking of the library and the executable file
 $(NAME):$(OBJ)
 		@$(AR) $(NAME) $(OBJ)
-		@echo "$(GREEN)ft_printf compilando!$(RESET)"
+		@echo "ft_printf compilando!"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
 		@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-		@echo "$(GREEN)ft_printf compilando!$(RESET)"
 
 $(OBJF):
 	@mkdir -p $(OBJ_DIR)
@@ -46,21 +45,21 @@ all:		$(NAME)
 
 clean:
 			@$(RM) -rf $(OBJ_DIR)
-			@echo "$(BLUE)ft_printf limpiando objetos!$(DEF_COLOR)"
+			@echo "ft_printf limpiando objetos!"
 
 fclean:		clean
 			@$(RM) -f $(NAME)
-			@echo "$(CYAN)ft_printf executable files cleaned!$(DEF_COLOR)"
-			@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
+			@echo "ft_printf executable files cleaned!$(DEF_COLOR)"
+			@echo "libft executable files cleaned!"
 cache:
 	@mkdir -p $(OBJ_DIR)
 
 re:		fclean all
-		@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEF_COLOR)"
+		@echo "Cleaned and rebuilt everything for ft_printf!"
 
 sanitize:
 	@$(CC) $(SANI) $(SRC) main.c -I $(INCLUDE)  -lft -o $(NAME)
-	@echo "$(GREEN)Sanitize compilando!$(RESET)"
+	@echo "Sanitize compilando!"
 
 valgrind:
 

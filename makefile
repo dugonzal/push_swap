@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
+#    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/15 19:49:23 by dugonzal         ###   ########.fr        #
+#    Updated: 2022/11/17 14:41:26 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ RM := rm -rf
 FLAGS := -Wall -Werror -Wextra
 SRC_DIR := src/
 OBJ_DIR := obj/
+T = time
 # *****************#
 #----debuggers-----#
 # *****************#
@@ -39,7 +40,6 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
 	@$(CC) $(FLAGS) -c $< -o $@
-	@echo "$@ done compile"
 # -c compila el codigo pero no lo linkea
 # -o es para poner el nombre del archivo de salida
 # $< es el primer elemento de la lista de dependencias de la regla obj
