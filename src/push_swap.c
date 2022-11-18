@@ -6,13 +6,13 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/17 19:41:26 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/18 10:25:34 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static const char **two_rguments(const char **av)
+static const char **two_arguments(const char **av)
 {
 	char **str;
 
@@ -20,6 +20,8 @@ static const char **two_rguments(const char **av)
 	av = (const char **)str;
 	return (av);
 }
+
+
 
 int	main(int ac, const char **av)
 {
@@ -32,7 +34,7 @@ int	main(int ac, const char **av)
 	if (ac == 2)
 	{
 		ac = ft_count_words(av[1], ' ');
-		av = two_rguments(av);
+		av = two_arguments(av);
 		i = 0;
 	}
 	while (i < ac)
@@ -46,22 +48,10 @@ int	main(int ac, const char **av)
 		ft_lstadd_back(&a, ft_lstnew(tmp));
 		i++;
 	}
-	while (a)
-	{
-		ft_printf("[%d]\n", *(int *)a->content);
-		a = a->next;
-	}
+	return (0);
 }
 
-
 /*
-nos van a pasar los numeros a ordenar de dos maneras,
-1. con una variable que tiene a dentro los argumentos
-2. nos pasan uno a uno los argumentos
-
-examples:
-1. ARG="1 2 3 4 5"; ./push_swap $ARG
-2. ./puush_swap 1 2 3 4 5
-
-comprobacion de errores
+el objetivo es rodenar de menot a mayor el stack es decir en orden acendente
+el stack es una lista enlazada,el stack a es el stack de entrada
 */
