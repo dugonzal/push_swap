@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/17 14:41:26 by ciclo            ###   ########.fr        #
+#    Updated: 2022/11/18 10:23:20 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJ)
 	@make -C libft
 	@mkdir -p obj_library
 	@mv libft/libft.a ./obj_library
-	@$(CC) $(FLAGS) $(SRC) obj_library/libft.a -o $@
+	@$(CC) $(SANI) $(FLAGS) $(SRC) obj_library/libft.a -o $@
 	@echo "$@ done compile"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)

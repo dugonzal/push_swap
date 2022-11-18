@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/17 19:24:21 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/18 10:26:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void err(const char **av, int i)
 	j = 0;
 	while (av[i][j])
 	{
+		check_int_max_min(av[i]);
 		if (av[i][j] == '-' || av[i][j] == '+')
 		{
 			if (av[i][j + 1] == '+' || av[i][j + 1] == '-')
@@ -48,8 +49,24 @@ void repeat(t_list *a, int *tmp)
 	while (a != NULL)
 	{
 		if (*(int *)a->content == *tmp)
+		{
 			error_msg ("Error", 1);
+			exit (1);
+		}
 		else
 			a = a->next;
 	}
+}
+
+void check_int_max_min(const char *str)
+{
+	long long int num;
+
+	num = 0;
+	if (*str == '-')
+		str++;
+	while (*str)
+		num = num * 10 + *str++ - '0';
+	if (num > INT_MAX || num < INT_MIN)
+		error_msg("Error", 1);
 }

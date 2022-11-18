@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/17 19:26:44 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/18 10:25:14 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 void	error_msg(char *s, int n);
 void	err(const char **av, int i);
 void	repeat(t_list *a, int *tmp);
+void	check_int_max_min(const char *str);
 
 #endif

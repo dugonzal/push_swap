@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:49:48 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/17 14:06:45 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/18 10:17:05 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ int	ft_atoi(const char *str)
 		neg = -1;
 	if (*str == '+' || *str == '-')
 		str++;
-	while (*str >= '0' && *str <= '9' && *str != 0)
-	{
-		nbr = nbr * 10 + *str - 48;
-		str++;
-	}
+	while (*str >= '0' && *str <= '9' && *str)
+		nbr = nbr * 10 + *str++ - 48;
 	return (nbr * neg);
 }
