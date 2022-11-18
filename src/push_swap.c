@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/18 10:25:34 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/18 13:20:43 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,19 @@ static const char **two_arguments(const char **av)
 	return (av);
 }
 
+static void order_check(t_list **a)
+{
+	t_list *tmp;
 
+	tmp = *a;
+	while (tmp->next != NULL)
+	{
+		if (*(int *)tmp->content > *(int *)tmp->next->content)
+			return ;
+		tmp = tmp->next;
+	}
+	exit (0);
+}
 
 int	main(int ac, const char **av)
 {
@@ -48,6 +60,13 @@ int	main(int ac, const char **av)
 		ft_lstadd_back(&a, ft_lstnew(tmp));
 		i++;
 	}
+	order_check(&a);
+	while (a)
+	{
+		ft_printf("%d\n", *(int *)a->content);
+		a = a->next;
+	}
+	ft_lstclear(&a, free);
 	return (0);
 }
 
