@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/18 10:23:20 by ciclo            ###   ########.fr        #
+#    Updated: 2022/11/18 10:52:14 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,9 @@ T = time
 SANI := -fsanitize=address -g3
 val :=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FILES := push_swap utils errors create_stack
+SRC_FILES := push_swap utils errors
 
 SRC := $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-OBJ := obj/push_swap.o utils errors create_stack
 OBJ := $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 OBJF := .cache_exists
