@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/18 13:20:43 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/22 15:00:32 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static const char **two_arguments(const char **av)
+static const char	**two_arguments(const char **av)
 {
-	char **str;
+	char	**str;
 
 	str = ft_split(av[1], ' ');
 	av = (const char **)str;
 	return (av);
 }
 
-static void order_check(t_list **a)
+void	order_check(t_list **a)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *a;
-	while (tmp->next != NULL)
+	while (tmp->next)
 	{
 		if (*(int *)tmp->content > *(int *)tmp->next->content)
 			return ;
@@ -37,7 +37,7 @@ static void order_check(t_list **a)
 
 int	main(int ac, const char **av)
 {
-	t_list *a;
+	t_list	*a;
 	int		i;
 	int		*tmp;
 
@@ -51,9 +51,7 @@ int	main(int ac, const char **av)
 	}
 	while (i < ac)
 	{
-		err (av, i);
-		if (ac == 1)
-			exit (0);
+		err (av, i, ac);
 		tmp = (int *)malloc(sizeof(int));
 		*tmp = ft_atoi(av[i]);
 		repeat (a, tmp);
@@ -61,16 +59,11 @@ int	main(int ac, const char **av)
 		i++;
 	}
 	order_check(&a);
-	while (a)
-	{
-		ft_printf("%d\n", *(int *)a->content);
-		a = a->next;
-	}
-	ft_lstclear(&a, free);
+	ver (a);
 	return (0);
 }
 
 /*
-el objetivo es rodenar de menot a mayor el stack es decir en orden acendente
+el objetivo es ordenar de menor a mayor el stack es decir en orden acendente
 el stack es una lista enlazada,el stack a es el stack de entrada
 */
