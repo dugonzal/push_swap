@@ -3,12 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/14 17:35:14 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/22 14:57:57 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void	ver(t_list *a)
+{
+	while (a)
+	{
+		printf("%d\n", *(int *)a->content);
+		a = a->next;
+	}
+}

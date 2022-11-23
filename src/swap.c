@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/22 14:58:05 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/11/22 15:01:00 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/11/22 16:53:34 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../include/push_swap.h"
 
-# include <stdio.h>
+// swap
 
-# include "../libft/include/libft.h"
-
-//control de errores prototype
-
-void	error_msg(char *s, int n);
-void	err(const char **av, int i, int ac);
-void	repeat(t_list *a, int *tmp);
-void	check_int_max_min(const char *str);
-void	ver(t_list *a);
-
-#endif
