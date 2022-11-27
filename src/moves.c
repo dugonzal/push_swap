@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:01:00 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/11/27 14:00:38 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/27 20:36:11 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,46 @@ void swap(t_list **stack, char *s)
 		ft_printf ("%s\n", s);
 }
 
+void swap_a_b(t_list **stack_a, t_list **stack_b)
+{
+	swap(stack_a, NULL);
+	swap(stack_b, NULL);
+	ft_printf("ss\n");
+}
 
-// push
+// push a
 
-void push(t_list **stack_a, t_list **stack_b, char *s)
+void push_a(t_list **stack_a, t_list **stack_b)
 {
 	t_list *tmp;
 
 	if (*stack_b)
 	{
-		tmp = (*stack_b)->next;
-		(*stack_b)->next = *stack_a;
-		*stack_a = *stack_b;
-		*stack_b = tmp;
+		tmp = *stack_b;
+		*stack_b = (*stack_b)->next;
+		tmp->next = *stack_a;
+		*stack_a = tmp;
 	}
-	if (s)
-		ft_printf ("%s\n", s);
+	ft_printf("pa\n");
 }
 
-// rotate
+// push b
+
+void push_b(t_list **stack_a, t_list **stack_b)
+{
+	t_list *tmp;
+
+	if (*stack_a)
+	{
+		tmp = *stack_a;
+		*stack_a = (*stack_a)->next;
+		tmp->next = *stack_b;
+		*stack_b = tmp;
+	}
+	ft_printf("pb\n");
+}
+
+// rotate a or b
 
 void rotate(t_list **stack, char *s)
 {
@@ -68,7 +89,16 @@ void rotate(t_list **stack, char *s)
 		ft_printf ("%s\n", s);
 }
 
-// reverse rotate
+// rotate a and b
+
+void rotate_a_b(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a, NULL);
+	rotate(stack_b, NULL);
+	ft_printf("rr\n");
+}
+
+// reverse rotate a and b
 
 void reverse_rotate(t_list **stack, char *s)
 {
@@ -87,4 +117,16 @@ void reverse_rotate(t_list **stack, char *s)
 	}
 	if (s)
 		ft_printf ("%s\n", s);
+}
+
+// reverse rotate a y reverse rotate b
+
+/// @brief reverse rotate a y reverse rotate b --rrr
+/// @param stack_a
+/// @param stack_b
+void reverse_rotate_a_b(t_list **stack_a, t_list **stack_b)
+{
+	reverse_rotate(stack_a, NULL);
+	reverse_rotate(stack_b, NULL);
+	ft_printf ("rrr\n");
 }
