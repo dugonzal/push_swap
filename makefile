@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/27 12:42:25 by ciclo            ###   ########.fr        #
+#    Updated: 2022/11/27 13:58:51 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ T = time
 SANI := -fsanitize=address -g3
 val :=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FILES := push_swap utils errors swap
+SRC_FILES := push_swap utils errors moves
 
 SRC := $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ := $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

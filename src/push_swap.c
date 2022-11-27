@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/27 12:46:55 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/27 13:57:50 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int	main(int ac, const char **av)
 		i++;
 	}
 	order_check(&a);
-	ver (a);
 	swap(&a, NULL);
+	ver (a);
 	return (0);
 }
 
