@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/22 15:00:32 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/11/27 12:46:55 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	main(int ac, const char **av)
 	}
 	order_check(&a);
 	ver (a);
+	swap(&a, NULL);
 	return (0);
 }
 
