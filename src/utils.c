@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/22 14:57:57 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/11/30 22:19:30 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ver(t_list *a)
 {
+	printf ("\n");
 	while (a)
 	{
-		printf("%d\n", *(int *)a->content);
+		printf("%d ", *(int *)a->content);
 		a = a->next;
 	}
+	printf ("\n");
 }
