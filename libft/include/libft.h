@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/17 14:06:32 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/01 17:04:51 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,13 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
-#include "../ft_printf/include/ft_printf.h"
-// Part
+# include "../ft_printf/include/ft_printf.h"
 
-/// @brief estcructura linkelist
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-// ft_is
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -47,7 +43,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // ft_str
 
-int	ft_count_words(char const *str, char c);
+int		ft_count_words(char const *str, char c);
 size_t	ft_strlen(const char *s);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);

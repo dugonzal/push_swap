@@ -6,62 +6,31 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/11/27 13:57:50 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/01 17:06:08 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static const char	**two_arguments(const char **av)
+void	ordenar_stack(t_list *a, t_list *b)
 {
-	char	**str;
-
-	str = ft_split(av[1], ' ');
-	av = (const char **)str;
-	return (av);
-}
-
-void	order_check(t_list **a)
-{
-	t_list	*tmp;
-
-	tmp = *a;
-	while (tmp->next)
-	{
-		if (*(int *)tmp->content > *(int *)tmp->next->content)
-			return ;
-		tmp = tmp->next;
-	}
-	exit (0);
+	(void)b;
+	small_alg(&a);
+	ver(a);
 }
 
 int	main(int ac, const char **av)
 {
 	t_list	*a;
-	int		i;
-	int		*tmp;
+	t_list	*b;
 
-	i = 1;
-	a = NULL;
-	if (ac == 2)
-	{
-		ac = ft_count_words(av[1], ' ');
-		av = two_arguments(av);
-		i = 0;
-	}
-	while (i < ac)
-	{
-		err (av, i, ac);
-		tmp = (int *)malloc(sizeof(int));
-		*tmp = ft_atoi(av[i]);
-		repeat (a, tmp);
-		ft_lstadd_back(&a, ft_lstnew(tmp));
-		i++;
-	}
-	order_check(&a);
-	swap(&a, NULL);
-	ver (a);
-	return (0);
+	b = NULL;
+	a = parser(ac, av);
+	if (order_check(&a))
+		exit (0);
+	ordenar_stack(a, b);
+	ft_lstiter(a, free);
+	exit (0);
 }
 
 /*

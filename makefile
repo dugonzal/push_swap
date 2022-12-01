@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/01 11:20:52 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/01 16:18:43 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ T = time
 SANI := -fsanitize=address -g3
 val :=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FILES := push_swap utils errors reverse_rotate swap push
+SRC_FILES := push_swap utils errors reverse_rotate swap push rotate small_alg parser
 
 SRC := $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ := $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -34,7 +34,7 @@ $(NAME): $(OBJ)
 	@make -C libft
 	@mkdir -p obj_library
 	@mv libft/libft.a ./obj_library
-	@$(CC) $(SANI) $(FLAGS) $(SRC) obj_library/libft.a -o $@
+	@$(CC) $(FLAGS) $(SRC) obj_library/libft.a -o $@
 	@echo "$@ done compile"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
@@ -62,6 +62,10 @@ fclean: clean
 re: fclean all
 
 val:
+	$(val) ./$(NAME)
+
+sanit:
+	$(CC) $(SANI) $(FLAGS) $(SRC) obj_library/libft.a -o $(NAME)
 	$(val) ./$(NAME)
 
 .PHONY: clean fclean re all

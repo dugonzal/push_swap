@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/22 14:45:44 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:05:47 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	err(const char **av, int i, int ac)
 		exit (1);
 }
 
-void repeat(t_list *a, int *tmp)
+void	repeat(t_list *a, int *tmp)
 {
 	while (a != NULL)
 	{
@@ -57,9 +57,9 @@ void repeat(t_list *a, int *tmp)
 	}
 }
 
-void check_int_max_min(const char *str)
+void	check_int_max_min(const char *str)
 {
-	long long int num;
+	long long int	num;
 
 	num = 0;
 	while (*str)

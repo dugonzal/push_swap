@@ -5,8 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 00:39:36 by ciclo             #+#    #+#             */
+/*   Created: 2022/12/01 17:02:01 by ciclo             #+#    #+#             */
+/*   Updated: 2022/12/01 17:02:03 by ciclo            ###   ########.fr       */
 /*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/libft.h"
 /// @brief Check if the character is alphabetic

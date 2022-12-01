@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:21:33 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/28 11:23:02 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/01 17:06:51 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 /// @brief
 /// @param stack_a
 /// @param stack_b
-void push_a(t_list **stack_a, t_list **stack_b)
+void	push_a(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (*stack_b)
 	{
@@ -30,13 +30,12 @@ void push_a(t_list **stack_a, t_list **stack_b)
 	ft_printf("pa\n");
 }
 
-
 /// @brief
 /// @param stack_a
 /// @param stack_b
-void push_b(t_list **stack_a, t_list **stack_b)
+void	push_b(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (*stack_a)
 	{
