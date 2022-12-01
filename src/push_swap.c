@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/12/01 17:06:08 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/01 17:13:26 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 void	ordenar_stack(t_list *a, t_list *b)
 {
+	if (order_check(&a))
+		exit (0);
 	(void)b;
 	small_alg(&a);
 	ver(a);
+	ft_lstiter(a, free);
+	return ;
 }
 
 int	main(int ac, const char **av)
@@ -26,10 +30,7 @@ int	main(int ac, const char **av)
 
 	b = NULL;
 	a = parser(ac, av);
-	if (order_check(&a))
-		exit (0);
 	ordenar_stack(a, b);
-	ft_lstiter(a, free);
 	exit (0);
 }
 
