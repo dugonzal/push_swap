@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/01 11:18:43 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/01 11:20:52 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ fclean: clean
 
 re: fclean all
 
-va:
-	$(val) $@
+val:
+	$(val) ./$(NAME)
 
 .PHONY: clean fclean re all
