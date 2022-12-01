@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:49:48 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/18 10:17:05 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/01 17:01:20 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 /// @return The converted int.
 int	ft_atoi(const char *str)
 {
-	int nbr;
-	int neg;
+	int	nbr;
+	int	neg;
 
 	nbr = 0;
 	neg = 1;
