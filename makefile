@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/01 16:18:43 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/04 23:00:05 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,9 @@ OBJF := .cache_exists
 
 $(NAME): $(OBJ)
 	@make -C libft
-	@mkdir -p obj_library
-	@mv libft/libft.a ./obj_library
-	@$(CC) $(FLAGS) $(SRC) obj_library/libft.a -o $@
+	@mkdir -p bin
+	@mv libft/libft.a ./bin
+	@$(CC) $(FLAGS) $(SRC) bin/libft.a -o $@
 	@echo "$@ done compile"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
@@ -56,16 +56,15 @@ clean:
 
 fclean: clean
 	@make fclean -C libft
-	@$(RM) obj_library
+	@$(RM) bin
 	@$(RM) $(NAME)
 
 re: fclean all
 
 val:
-	$(val) ./$(NAME)
+	$(val) ./$(NAME) 3 2 1
 
-sanit:
-	$(CC) $(SANI) $(FLAGS) $(SRC) obj_library/libft.a -o $(NAME)
-	$(val) ./$(NAME)
+sani:
+	$(CC) $(SANI) $(FLAGS) $(SRC) bin/libft.a -o $(NAME)
 
 .PHONY: clean fclean re all
