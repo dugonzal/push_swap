@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:09:41 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/04 22:58:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ void	small_alg(t_list **a)
 	{
 		if (*(int *)(*a)->content > *(int *)(*a)->next->content)
 			swap(a, "sa");
-		else if (*(int *)(*a)->content > *(int *)(*a)->next->content && \
-		*(int *)(*a)->content > *(int *)(*a)->next->next->content)
-			rotate(a, "ra");
 		else if (*(int *)(*a)->next->content > \
 		*(int *)(*a)->next->next->content)
 			reverse_rotate(a, "rra");
