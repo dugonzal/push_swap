@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/12/04 23:28:13 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/04 23:49:39 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,16 @@ int	main(int ac, const char **av)
 
 	b = NULL;
 	a = parser(ac, av);
-	alg(&a, &b);
+	while (!order_check(&a))
+	{
+		//printf ("min index: %d", getMinIndex(a));
+		alg(&a, &b);
+	}
+	while (b)
+		push_a(&a, &b);
+	ver (a);
+	ft_lstclear(&a, free);
+	ft_lstclear(&b, free);
 	exit (0);
 }
 
