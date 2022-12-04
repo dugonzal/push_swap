@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/12/04 23:01:38 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/04 23:28:13 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,39 +50,6 @@ int	getMinIndex(t_list *a)
 	return (index);
 }
 
-void ft_radixsort(t_list **a, t_list **b, int size)
-{
-	int	i;
-	//int	j;
-	int	max;
-	int	min;
-	int	*arr;
-
-	i = -1;
-	//j = 0;
-	(void)b;
-	arr = (int *)malloc(sizeof(int) * size);
-	while (++i < size)
-		arr[i] = ft_lstindex(*a, i);
-	max = getMax(*a);
-	min = getMin(*a);
-	printf ("%d %d", max, min);
-	
-
-}
-
-static void	ordenar_stack(t_list *a, t_list *b)
-{
-	(void)b;
-	if (order_check(&a))
-		exit (0);
-	if (ft_lstsize(a) < 4)
-		small_alg(&a);
-	else
-		ft_radixsort(&a, &b, ft_lstsize(a));
-
-}
-
 int	main(int ac, const char **av)
 {
 	t_list	*a;
@@ -90,8 +57,7 @@ int	main(int ac, const char **av)
 
 	b = NULL;
 	a = parser(ac, av);
-	ordenar_stack(a, b);
-
+	alg(&a, &b);
 	exit (0);
 }
 
