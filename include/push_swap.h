@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2022/12/04 18:26:13 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/04 23:27:38 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void		rotate(t_list **stack, char *s);
 void		rotate_a_b(t_list **stack_a, t_list **stack_b);
 void		reverse_rotate(t_list **stack, char *s);
 void		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
-void		small_alg(t_list **a);
-void		ft_qsort(t_list **a, t_list **b, int len);
+void		alg(t_list **a, t_list **b);
 int			getMax(t_list *a);
 int			getMin(t_list *a);
 

@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   small_alg.c                                        :+:      :+:    :+:   */
+/*   alg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/04 22:58:16 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/04 23:28:45 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	small_alg(t_list **a)
+void	alg(t_list **a, t_list **b)
 {
+	(void)b;
 	while (!order_check(a))
 	{
 		if (*(int *)(*a)->content > *(int *)(*a)->next->content)
