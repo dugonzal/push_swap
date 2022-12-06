@@ -6,79 +6,97 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:38:50 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/04 18:41:50 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/06 11:55:12 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+// C program to
+// sort array using
+// pancake sort
+#include <stdio.h>
+#include <stdlib.h>
 
-void countsort(t_list **a, t_list **b, int n, int exp)
+/* Reverses arr[0..i] */
+void flip(int arr[], int i)
 {
-	int	*output;
-	int	i;
-	int	count[10];
-
-	i = 0;
-	output = (int *)malloc(n * sizeof(int));
-	while (i < 10)
-		count[i++] = 0;
-	i = 0;
-	while (i < n)
+	int temp, start = 0;
+	while (start < i)
 	{
-		count[(*(int *)ft_lstindex(*a, i) / exp) % 10]++;
-		i++;
-	}
-	i = 1;
-	while (i < 10)
-	{
-		count[i] += count[i - 1];
-		i++;
-	}
-	i = n - 1;
-	while (i >= 0)
-	{
-		output[count[(*(int *)ft_lstindex(*a, i) / exp) % 10] - 1] = *(int *)ft_lstindex(*a, i);
-		count[(*(int *)ft_lstindex(*a, i) / exp) % 10]--;
+		temp = arr[start];
+		arr[start] = arr[i];
+		arr[i] = temp;
+		start++;
 		i--;
 	}
-	i = 0;
-	while (i < n)
-	{
-		*(int *)ft_lstindex(*a, i) = output[i];
-		i++;
-	}
-	free(output);
 }
 
-void radixsort(t_list **a, t_list **b, int n)
+// Returns index of the
+// maximum element in
+// arr[0..n-1]
+int findMax(int arr[], int n)
 {
-	int	max;
-	int	exp;
+	int mi, i;
+	for (mi = 0, i = 0; i < n; ++i)
+		if (arr[i] > arr[mi])
+			mi = i;
+	return mi;
+}
 
-	max = getmax(*a);
-	exp = 1;
-	while (max / exp > 0)
+// The main function that
+// sorts given array using
+// flip operations
+void pancakeSort(int* arr, int n)
+{
+	// Start from the complete
+	// array and one by one
+	// reduce current size
+	// by one
+	for (int curr_size = n; curr_size > 1;
+								--curr_size)
 	{
-		countsort(a, b, n, exp);
-		exp *= 10;
+		// Find index of the
+		// maximum element in
+		// arr[0..curr_size-1]
+		int mi = findMax(arr, curr_size);
+
+		// Move the maximum
+		// element to end of
+		// current array if
+		// it's not already
+		// at the end
+		if (mi != curr_size - 1) {
+			// To move at the end,
+			// first move maximum
+			// number to beginning
+			flip(arr, mi);
+
+			// Now move the maximum
+			// number to end by
+			// reversing current array
+			flip(arr, curr_size - 1);
+		}
 	}
 }
 
-int	main(int ac, char **av)
+// A utility function to print
+// n array of size n
+void printArray(int arr[], int n)
 {
-	t_list	*a;
-	t_list	*b;
-	int		i;
+	for (int i = 0; i < n; ++i)
+		printf("%d ", arr[i]);
+}
 
-	i = 0;
-	a = NULL;
-	b = NULL;
-	if (ac < 2)
-		return (0);
-	while (av[++i])
-		ft_lstadd_back(&a, ft_lstnew(*(int *)ft_atoi(av[i])));
-	radixsort(&a, &b, ft_lstsize(a));
-	ft_lstclear(&a, free);
-	ft_lstclear(&b, free);
-	return (0);
+// Driver program to test above function
+int main()
+{
+	int arr[] = { 434323, 140, 243430, 141, 124, -446, -7 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+
+	printf ("\n%d %ld %ld\n", n, sizeof(arr), sizeof(arr[0]));
+	pancakeSort(arr, n);
+
+	puts("Sorted Array ");
+	printArray(arr, n);
+
+	return 0;
 }
