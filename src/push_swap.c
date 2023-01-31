@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2022/12/04 23:49:39 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/01/31 13:47:09 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	ft_lstindex(t_list *lst, int index)
 	}
 	return (0);
 }
-
 
 int	getMinIndex(t_list *a)
 {
@@ -58,10 +57,7 @@ int	main(int ac, const char **av)
 	b = NULL;
 	a = parser(ac, av);
 	while (!order_check(&a))
-	{
-		//printf ("min index: %d", getMinIndex(a));
 		alg(&a, &b);
-	}
 	while (b)
 		push_a(&a, &b);
 	ver (a);

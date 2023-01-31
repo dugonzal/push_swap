@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   alg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/04 23:51:18 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/01/31 13:47:19 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 // puedo ir comporanod el primer elemento con el ultimo y asi sucesivamente
 // si el primer elemento es mayor que el ultimo, entonces el primer elemento es el mayor
