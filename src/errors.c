@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:17:56 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/01 12:33:00 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ void	repeat(t_list *a, int *tmp)
 	while (a != NULL)
 	{
 		if (*(int *)a->content == *tmp)
-		{
 			error_msg ("Error", 1);
-			exit (1);
-		}
 		else
 			a = a->next;
 	}

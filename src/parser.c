@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/04 18:36:36 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/01 12:36:09 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static const char	**two_arguments(const char **av)
 
 	str = ft_split(av[1], ' ');
 	av = (const char **)str;
-	return (av);
+	return (av) ;
 }
 
 t_list	*parser(int ac, const char **av)
