@@ -12,9 +12,9 @@ stack b; -  no tiene nada
 
 sa: swap a -intercambia los dos primero elementos del stack a, no hace nada si ha uno o menos elementos,
 
-sb: swap b -intercambia los dos primero elementos del stack b, no hace nada si ha uno o menos elementos,
+sb: swap b -intercambia los dos primero elementos del stack b, no hace nada si hay uno o menos elementos,
 
-ss: swap  sa y  swap sb al mismo tiempo
+ss: swap  sa y sb al mismo tiempo
 
 pa: push a - toma el primer elemento del stack b y lo pone encima del stack a, no hace nada si esta vacio.
 
