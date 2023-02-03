@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2023/01/31 13:47:19 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:17:28 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,45 @@ void	alg(t_list **a, t_list **b)
 	int		max;
 	int		min;
 
-	max = getMax(*a);
-	min = getMin(*a);
+	max = get_max(*a);
+	min = get_min(*a);
 	while (!order_check(a))
 	{
 		if (*(int *)(*a)->content == max)
 		{
 			rotate(a, "ra");
-			max = getMax(*a);
+			max = get_max(*a);
 		}
 		else if (*(int *)(*a)->content == min)
 		{
 			push_b(a, b);
-			min = getMin(*a);
+			min = get_min(*a);
 		}
 		else
 			rotate(a, "ra");
 	}
 	while (*b)
 		push_a(a, b);
+}
+//
+
+void	algoritmo(t_list **a, t_list **b)
+{
+	int	max;
+	int i;
+
+	//int	min;
+	i = 0;
+	(void)b;
+	max = get_max (*a);
+	while (!order_check(&a[i]))
+	{
+		i++;
+		// pudo comprobar los dos primeros numeros
+		if (max)
+		{
+			printf ("[%d]{{{{{{{}}{}} \n", max);
+			break ;
+		}
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2023/01/31 13:47:44 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:09:42 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void		rotate_a_b(t_list **stack_a, t_list **stack_b);
 void		reverse_rotate(t_list **stack, char *s);
 void		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 void		alg(t_list **a, t_list **b);
-int			getMax(t_list *a);
-int			getMin(t_list *a);
+int			get_max(t_list *a);
+int			get_min(t_list *a);
+void		algoritmo(t_list **a, t_list **b);
 
 #endif

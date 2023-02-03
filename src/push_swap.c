@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/01/31 13:47:09 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:53:08 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_lstindex(t_list *lst, int index)
 	return (0);
 }
 
+/*
 int	getMinIndex(t_list *a)
 {
 	int	min;
@@ -48,6 +49,7 @@ int	getMinIndex(t_list *a)
 	}
 	return (index);
 }
+*/
 
 int	main(int ac, const char **av)
 {
@@ -56,10 +58,8 @@ int	main(int ac, const char **av)
 
 	b = NULL;
 	a = parser(ac, av);
-	while (!order_check(&a))
-		alg(&a, &b);
-	while (b)
-		push_a(&a, &b);
+	//alg(&a, &b);
+	algoritmo (&a, &b);
 	ver (a);
 	ft_lstclear(&a, free);
 	ft_lstclear(&b, free);
