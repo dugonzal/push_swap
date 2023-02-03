@@ -6,12 +6,11 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/01/31 13:45:46 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:46:03 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 int	order_check(t_list **a)
 {
@@ -27,7 +26,7 @@ int	order_check(t_list **a)
 	return (1);
 }
 
-int	getMax(t_list *a)
+int	get_max(t_list *a)
 {
 	int	max;
 
@@ -41,7 +40,7 @@ int	getMax(t_list *a)
 	return (max);
 }
 
-int	getMin(t_list *a)
+int	get_min(t_list *a)
 {
 	int	min;
 
