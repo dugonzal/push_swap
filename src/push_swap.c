@@ -6,7 +6,11 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/02/03 17:53:08 by dugonzal         ###   ########.fr       */
+=======
+/*   Updated: 2023/02/01 13:23:39 by ciclo            ###   ########.fr       */
+>>>>>>> f5d3a8d2fc55b319569b65f9351ceabcc385d98b
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +62,13 @@ int	main(int ac, const char **av)
 
 	b = NULL;
 	a = parser(ac, av);
+<<<<<<< HEAD
 	//alg(&a, &b);
 	algoritmo (&a, &b);
 	ver (a);
+=======
+	alg(&a, &b);
+>>>>>>> f5d3a8d2fc55b319569b65f9351ceabcc385d98b
 	ft_lstclear(&a, free);
 	ft_lstclear(&b, free);
 	exit (0);
