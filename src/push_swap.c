@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/10 11:57:49 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:12:48 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	main(int ac, const char **av)
 
 	b = NULL;
 	a = parser(ac, av);
+	ver (a);
 	//ft_lstclear(&a, free);
 	//ft_lstclear(&b, free);
 	exit (0);
