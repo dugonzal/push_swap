@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
+#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/04 23:28:35 by ciclo            ###   ########.fr        #
+#    Updated: 2023/02/10 11:34:02 by dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
-CC := gcc
+CC := gcc -g3
 RM := rm -rf
 FLAGS := -Wall -Werror -Wextra
 SRC_DIR := src/

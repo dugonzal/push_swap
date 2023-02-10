@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/03 18:43:17 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:50:32 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ int	get_min(t_list *a)
 	return (min);
 }
 
-void	ver(t_list *a)
+void	ver(t_node *a)
 {
 	printf ("\n");
 	while (a)
 	{
-		printf("%d ", *(int *)a->content);
+		printf ("%d ", *(int *)a->content);
 		a = a->next;
 	}
 	printf ("\n");

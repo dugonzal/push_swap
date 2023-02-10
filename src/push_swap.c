@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/03 18:43:08 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:57:49 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,13 @@ int	getMinIndex(t_list *a)
 
 int	main(int ac, const char **av)
 {
-	t_list	*a;
-	t_list	*b;
+	t_node	*a;
+	t_node	*b;
 
 	b = NULL;
 	a = parser(ac, av);
-	alg(&a, &b);
-	ft_lstclear(&a, free);
-	ft_lstclear(&b, free);
+	//ft_lstclear(&a, free);
+	//ft_lstclear(&b, free);
 	exit (0);
 }
 

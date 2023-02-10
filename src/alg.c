@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/03 18:43:30 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:23:27 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	alg(t_list **a, t_list **b)
 void	algoritmo(t_list **a, t_list **b)
 {
 	int	max;
-	int i;
+	int	i;
 
 	//int	min;
 	i = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/01 12:33:00 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/10 11:19:18 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	err(const char **av, int i, int ac)
 		exit (1);
 }
 
-void	repeat(t_list *a, int *tmp)
+void	repeat(t_node *a, int *tmp)
 {
 	while (a != NULL)
 	{
