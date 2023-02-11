@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/10 12:12:48 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:37:45 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_lstindex(t_list *lst, int index)
+int	ft_lstindex(t_node *lst, int index)
 {
 	int	i;
 
@@ -27,8 +27,7 @@ int	ft_lstindex(t_list *lst, int index)
 	return (0);
 }
 
-/*
-int	getMinIndex(t_list *a)
+int	getMinIndex(t_node *a)
 {
 	int	min;
 	int	i;
@@ -49,16 +48,50 @@ int	getMinIndex(t_list *a)
 	}
 	return (index);
 }
-*/
+
+static int	*get_min_number(t_node *a)
+{
+	int	min;
+	int	*minn;
+
+	min = *(int *)a->content;
+	while (a)
+	{
+		if (*(int *)a->content < min)
+			min = *(int *)a->content;
+		a = a->next;
+	}
+	minn = malloc(sizeof(int));
+	*minn = min;
+	return (minn);
+}
+
+// encuentro el menor numero del stacj y lo indexo con 0 y asi sucesivamente
+// y descarto el numero que ya indexe
+static void index_stack(t_node *a, int ac)
+{
+	int	*min;
+	int	i;
+	int	index;
+
+	i = 0;
+	while (i < ac - 1)
+	{
+		min = get_min_number(a);
+		index = getMinIndex(a);
+		ft_lstadd_back_node(&a, ft_new_node(min));
+		ft_lstindex(a, index);
+		i++;
+	}
+}
 
 int	main(int ac, const char **av)
 {
 	t_node	*a;
-	t_node	*b;
 
-	b = NULL;
+	a = NULL;
 	a = parser(ac, av);
-	ver (a);
+	index_stack(a, ac);
 	//ft_lstclear(&a, free);
 	//ft_lstclear(&b, free);
 	exit (0);

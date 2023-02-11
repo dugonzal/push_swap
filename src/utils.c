@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/10 11:50:32 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:12:04 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,6 @@ int	order_check(t_list **a)
 	return (1);
 }
 
-int	get_max(t_list *a)
-{
-	int	max;
-
-	max = *(int *)a->content;
-	while (a)
-	{
-		if (*(int *)a->content > max)
-			max = *(int *)a->content;
-		a = a->next;
-	}
-	return (max);
-}
 
 int	get_min(t_list *a)
 {
@@ -60,6 +47,7 @@ void	ver(t_node *a)
 	while (a)
 	{
 		printf ("%d ", *(int *)a->content);
+		printf ("(%d) \n", a->index);
 		a = a->next;
 	}
 	printf ("\n");

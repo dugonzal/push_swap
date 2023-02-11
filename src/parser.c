@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/10 11:57:26 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:25:05 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_node	*ft_new_node(int *content)
 	if (!new)
 		return (NULL);
 	new->content = content;
+	//new->index = index;
 	new->next = NULL;
 	return (new);
 }
@@ -48,26 +49,25 @@ t_node	*ft_lstadd_back_node(t_node *lst, t_node *new)
 
 t_node	*parser(int ac, const char **av)
 {
-	t_node	*a;
+	t_node	*tmp_node;
 	int		*tmp;
 	int		i;
 
-	i = 1;
-	a = NULL;
+	i = 0;
+	tmp_node = NULL;
 	if (ac == 2)
 	{
 		ac = ft_count_words(av[1], ' ');
 		av = two_arguments(av);
-		i = 0;
+		i = -1;
 	}
-	while (i < ac)
+	while (++i < ac)
 	{
 		err (av, i, ac);
 		tmp = (int *)malloc(sizeof(int));
 		*tmp = ft_atoi(av[i]);
-		repeat (a, tmp);
-		a = ft_lstadd_back_node(a, ft_new_node(tmp));
-		i++;
+		repeat (tmp_node, tmp);
+		tmp_node = ft_lstadd_back_node(tmp_node, ft_new_node(tmp));
 	}
-	return (a);
+	return (tmp_node);
 }

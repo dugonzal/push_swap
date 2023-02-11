@@ -1,0 +1,7 @@
+bin
+.vscode
+push_swap.dSYM
+push_swap
+.nfs.*
+steps/*
+
