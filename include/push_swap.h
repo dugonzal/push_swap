@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/10 11:19:47 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:15:01 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		reverse_rotate(t_list **stack, char *s);
 void		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 void		alg(t_list **a, t_list **b);
 int			get_max(t_list *a);
-int			get_min(t_list *a);
+//int			get_min(t_list *a);
 void		algoritmo(t_list **a, t_list **b);
 
 #endif
