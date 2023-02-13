@@ -6,15 +6,15 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/11 17:12:04 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/13 18:23:23 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	order_check(t_list **a)
+int	order_check(t_node **a)
 {
-	t_list	*tmp;
+	t_node	*tmp;
 
 	tmp = *a;
 	while (tmp->next)
@@ -27,7 +27,7 @@ int	order_check(t_list **a)
 }
 
 
-int	get_min(t_list *a)
+int	get_min(t_node *a)
 {
 	int	min;
 

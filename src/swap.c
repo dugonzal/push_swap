@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:20:12 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:06:25 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/13 18:24:21 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 /// @brief
 /// @param stack
 /// @param s
-void	swap(t_list **stack, char *s)
+void	swap(t_node **stack, char *s)
 {
-	t_list	*tmp;
+	t_node	*tmp;
 
 	if (*stack && (*stack)->next)
 	{
@@ -33,7 +33,7 @@ void	swap(t_list **stack, char *s)
 /// @brief
 /// @param stack_a
 /// @param stack_b
-void	swap_a_b(t_list **stack_a, t_list **stack_b)
+void	swap_a_b(t_node **stack_a, t_node **stack_b)
 {
 	swap(stack_a, NULL);
 	swap(stack_b, NULL);
