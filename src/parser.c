@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/11 17:25:05 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/13 18:03:15 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ t_node	*ft_new_node(int *content)
 	if (!new)
 		return (NULL);
 	new->content = content;
-	//new->index = index;
 	new->next = NULL;
 	return (new);
 }

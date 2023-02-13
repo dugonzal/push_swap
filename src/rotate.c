@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:24:15 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:07:29 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/13 18:23:36 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /// @brief
 /// @param stack
 /// @param s
-void	rotate(t_list **stack, char *s)
+void	rotate(t_node **stack, char *s)
 {
-	t_list	*tmp;
-	t_list	*tmp2;
+	t_node	*tmp;
+	t_node	*tmp2;
 
 	if (*stack && (*stack)->next)
 	{
@@ -38,7 +38,7 @@ void	rotate(t_list **stack, char *s)
 /// @brief rotate a and b --rr
 /// @param stack_a
 /// @param stack_b
-void	rotate_a_b(t_list **stack_a, t_list **stack_b)
+void	rotate_a_b(t_node **stack_a, t_node **stack_b)
 {
 	rotate(stack_a, NULL);
 	rotate(stack_b, NULL);
