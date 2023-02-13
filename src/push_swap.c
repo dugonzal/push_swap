@@ -6,92 +6,47 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/11 17:37:45 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/13 16:51:14 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_lstindex(t_node *lst, int index)
+t_node	*get_next_min(t_node **a)
 {
-	int	i;
+	t_node	*tmp;
+	t_node	*tmp2;
+	int		min;
 
-	i = 0;
-	while (lst)
+	tmp = *a;
+	tmp2 = tmp;
+	min = *(int *)tmp->content;
+	while (tmp)
 	{
-		if (i == index)
-			return (*(int *)lst->content);
-		lst = lst->next;
-		i++;
-	}
-	return (0);
-}
-
-int	getMinIndex(t_node *a)
-{
-	int	min;
-	int	i;
-	int	index;
-
-	min = *(int *)a->content;
-	index = 0;
-	i = 0;
-	while (a)
-	{
-		if (*(int *)a->content < min)
+		printf ("min = [%d], tmp->content = [%d], tmp2->content = [%d]\n", min, *(int *)tmp->content, *(int *)tmp2->content);
+		if (*(int *)tmp->content < min)
 		{
-			min = *(int *)a->content;
-			index = i;
+			min = *(int *)tmp->content;
+			tmp2 = tmp; // tmp2 es el nodo con el valor minimo en el stack a
 		}
-		a = a->next;
-		i++;
+		tmp = tmp->next;
 	}
-	return (index);
-}
-
-static int	*get_min_number(t_node *a)
-{
-	int	min;
-	int	*minn;
-
-	min = *(int *)a->content;
-	while (a)
-	{
-		if (*(int *)a->content < min)
-			min = *(int *)a->content;
-		a = a->next;
-	}
-	minn = malloc(sizeof(int));
-	*minn = min;
-	return (minn);
-}
-
-// encuentro el menor numero del stacj y lo indexo con 0 y asi sucesivamente
-// y descarto el numero que ya indexe
-static void index_stack(t_node *a, int ac)
-{
-	int	*min;
-	int	i;
-	int	index;
-
-	i = 0;
-	while (i < ac - 1)
-	{
-		min = get_min_number(a);
-		index = getMinIndex(a);
-		ft_lstadd_back_node(&a, ft_new_node(min));
-		ft_lstindex(a, index);
-		i++;
-	}
+	return (tmp2);
 }
 
 int	main(int ac, const char **av)
 {
 	t_node	*a;
+	t_node	*b;
 
-	a = NULL;
-	a = parser(ac, av);
-	index_stack(a, ac);
+	ft_memset(&a, 0, sizeof(t_node));
+	ft_memset(&b, 0, sizeof(t_node));
+	a = (t_node *)malloc(sizeof(t_node));
+	b = (t_node *)malloc(sizeof(t_node));
+ 	a  = parser(ac, av);
+	ver (a);
+	b  = get_next_min(&a);
+	ver (b);
 	//ft_lstclear(&a, free);
 	//ft_lstclear(&b, free);
 	exit (0);
