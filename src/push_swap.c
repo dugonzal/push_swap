@@ -6,38 +6,82 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/13 18:15:09 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/14 11:36:34 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* t_node	*get_next_min(t_node **a)
+void ft_swap(int *a, int *b)
 {
-	t_node	*tmp;
-	t_node	*tmp2;
-	int		min;
+	int tmp;
 
 	tmp = *a;
-	tmp2 = tmp;
-	min = *(int *)tmp->content;
-	while (tmp)
-	{
-		printf ("min = [%d], tmp->content = [%d], tmp2->content = [%d]\n", min, *(int *)tmp->content, *(int *)tmp2->content);
-		if (*(int *)tmp->content < min)
-		{
-			min = *(int *)tmp->content;
-			tmp2 = tmp;
-		}
-		else
-			tmp = tmp->next;
-	}
-	return (tmp2);
+	*a = *b;
+	*b = tmp;
 }
- */
 
+void	sort_numbers(int *sorted, t_node *head, int size)
+{
+	int i;
+	int j;
+	int min_index;
 
+	i = 0;
+	j = 0;
+	while (head != NULL)
+	{
+		sorted[i++] = *(head->content);
+		head = head->next;
+	}
+	i = -1;
+	while (++i < size - 1)
+	{
+		min_index = i;
+		j = i;
+		while (++j < size)
+			if (sorted[j] < sorted[min_index])
+				min_index = j;
+		if (min_index != i)
+			ft_swap(&sorted[i], &sorted[min_index]);
+	}
+}
 
+int ft_size(t_node *head)
+{
+	int i;
+
+	i = 0;
+	while (head != NULL)
+	{
+		i++;
+		head = head->next;
+	}
+	return (i);
+}
+
+void index_numbers(t_node *head)
+{
+	int *sorted;
+	int j;
+	int size;
+
+	size = ft_size(head);
+	sorted = malloc(sizeof(int) * size);
+	if (!sorted)
+		return ;
+	sort_numbers(sorted, head, size);
+	// Asignar el índice
+	while (head != NULL)
+	{
+		j = 0;
+		while (j < size && *(head->content) != sorted[j])
+			j++;
+		head->index = j;
+		head = head->next;
+	}
+	free(sorted);
+}
 int	main(int ac, const char **av)
 {
 	t_node	*a;
@@ -48,7 +92,7 @@ int	main(int ac, const char **av)
 	a = (t_node *)malloc(sizeof(t_node));
 	b = (t_node *)malloc(sizeof(t_node));
  	a  = parser(ac, av);
-	get_next_min(&a);
+	index_numbers(a);
 	ver (a);
 	//ft_lstclear(&a, free);
 	//ft_lstclear(&b, free);
