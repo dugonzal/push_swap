@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/14 11:36:34 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/14 11:47:42 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	sort_numbers(int *sorted, t_node *head, int size)
 	int min_index;
 
 	i = 0;
-	j = 0;
 	while (head != NULL)
 	{
 		sorted[i++] = *(head->content);
 		head = head->next;
 	}
+	j = 0;
 	i = -1;
-	while (++i < size - 1)
+	while (++i < (size - 1))
 	{
 		min_index = i;
 		j = i;
@@ -60,6 +60,7 @@ int ft_size(t_node *head)
 	return (i);
 }
 
+// Asignar el índice
 void index_numbers(t_node *head)
 {
 	int *sorted;
@@ -71,7 +72,6 @@ void index_numbers(t_node *head)
 	if (!sorted)
 		return ;
 	sort_numbers(sorted, head, size);
-	// Asignar el índice
 	while (head != NULL)
 	{
 		j = 0;
@@ -82,6 +82,9 @@ void index_numbers(t_node *head)
 	}
 	free(sorted);
 }
+
+
+
 int	main(int ac, const char **av)
 {
 	t_node	*a;
@@ -94,8 +97,8 @@ int	main(int ac, const char **av)
  	a  = parser(ac, av);
 	index_numbers(a);
 	ver (a);
-	//ft_lstclear(&a, free);
-	//ft_lstclear(&b, free);
+	clear(a);
+	clear(b);
 	exit (0);
 }
 
