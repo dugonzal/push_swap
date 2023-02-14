@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/13 18:23:23 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/14 11:46:20 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	order_check(t_node **a)
 	}
 	return (1);
 }
-
 
 int	get_min(t_node *a)
 {
@@ -51,4 +50,16 @@ void	ver(t_node *a)
 		a = a->next;
 	}
 	printf ("\n");
+}
+
+void clear(t_node *head)
+{
+	t_node *tmp;
+
+	while (head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }

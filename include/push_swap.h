@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/13 18:22:32 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/14 11:46:10 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int			get_max(t_node *a);
 void		algoritmo(t_node **a, t_node **b);
 t_node		*ft_lstadd_back_node(t_node *lst, t_node *new);
 t_node		*ft_new_node(int *content);
-
+void		clear(t_node *head);
 
 #endif

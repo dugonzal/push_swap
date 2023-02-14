@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/13 18:03:15 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/14 11:48:19 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ t_node	*parser(int ac, const char **av)
 		*tmp = ft_atoi(av[i]);
 		repeat (tmp_node, tmp);
 		tmp_node = ft_lstadd_back_node(tmp_node, ft_new_node(tmp));
+	}
+	if (order_check(&tmp_node))
+	{
+		free(tmp_node);
+		exit(1);
 	}
 	return (tmp_node);
 }
