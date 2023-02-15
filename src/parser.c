@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/14 11:48:19 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/15 14:58:56 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,23 @@ t_node	*ft_new_node(int *content)
 	return (new);
 }
 
-t_node	*ft_lstadd_back_node(t_node *lst, t_node *new)
+t_node	**ft_lstadd_back_node(t_node **lst, t_node *new)
 {
 	t_node	*tmp;
 
 	if (!lst)
-		return (new);
-	tmp = lst;
+		return (lst);
+
+	tmp = *lst;
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;
 	return (lst);
 }
 
-t_node	*parser(int ac, const char **av)
+t_node	**parser(int ac, const char **av)
 {
-	t_node	*tmp_node;
+	t_node	**tmp_node;
 	int		*tmp;
 	int		i;
 
@@ -65,10 +66,10 @@ t_node	*parser(int ac, const char **av)
 		err (av, i, ac);
 		tmp = (int *)malloc(sizeof(int));
 		*tmp = ft_atoi(av[i]);
-		repeat (tmp_node, tmp);
 		tmp_node = ft_lstadd_back_node(tmp_node, ft_new_node(tmp));
+		//repeat (tmp_node, tmp);
 	}
-	if (order_check(&tmp_node))
+	if (order_check(tmp_node))
 	{
 		free(tmp_node);
 		exit(1);

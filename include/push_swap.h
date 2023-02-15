@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/14 11:46:10 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/15 14:54:55 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ typedef struct s_node
 
 void		error_msg(char *s, int n);
 void		err(const char **av, int i, int ac);
-void		repeat(t_node *a, int *tmp);
+void		repeat(t_node **a, int *tmp);
 void		check_int_max_min(const char *str);
-void		ver(t_node *a);
+void		ver(t_node **a);
 int			order_check(t_node **a);
-t_node		*parser(int ac, const char **av);
+t_node		**parser(int ac, const char **av);
 void		swap(t_node **stack, char *s);
 void		swap_a_b(t_node **stack_a, t_node **stack_b);
 void		push_b(t_node **stack_a, t_node **stack_b);
@@ -44,8 +44,8 @@ void		alg(t_node **a, t_node **b);
 int			get_max(t_node *a);
 //int			get_min(t_list *a);
 void		algoritmo(t_node **a, t_node **b);
-t_node		*ft_lstadd_back_node(t_node *lst, t_node *new);
+t_node		**ft_lstadd_back_node(t_node **lst, t_node *new);
 t_node		*ft_new_node(int *content);
-void		clear(t_node *head);
+void		clear(t_node **head);
 
 #endif

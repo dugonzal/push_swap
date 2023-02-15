@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/14 11:46:20 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/15 13:18:28 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,27 @@ int	get_min(t_node *a)
 	return (min);
 }
 
-void	ver(t_node *a)
+void	ver(t_node **a)
 {
 	printf ("\n");
-	while (a)
+	while (*a)
 	{
-		printf ("%d ", *(int *)a->content);
-		printf ("(%d) \n", a->index);
-		a = a->next;
+		printf ("<content>%d \n", *(*a)->content);
+		//printf ("<index>(%d) \n", a->index);
+		*(*a) = *(*a)->next;
 	}
 	printf ("\n");
 }
 
-void clear(t_node *head)
+void clear(t_node **head)
 {
 	t_node *tmp;
 
-	while (head != NULL)
+	tmp = *head;
+	while (tmp != 0)
 	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
+		if (tmp)
+			free (tmp);
+		tmp = tmp->next;
 	}
 }
