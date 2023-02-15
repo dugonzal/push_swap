@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:03:34 by ciclo             #+#    #+#             */
-/*   Updated: 2022/10/24 12:56:52 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/12 16:18:30 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	if (!dst && !src)
 		return (0);
-	i = 0;
-	while (i < n)
-		((unsigned char *)dst)[i++] = ((unsigned char *)src)[i];
+	i = -1;
+	while (++i < n)
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 	return (dst);
 }

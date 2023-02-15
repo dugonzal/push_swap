@@ -40,6 +40,7 @@ ft_mem | Functions to manipulate memory.
 ft_put | Functions to print characters, strings, and integers.
 ft_str | Functions to manipulate strings.
 ft_tol | Functions to convert characters to integers and vice versa, converting to lowercase and uppercase.
+octet  | functions for manipulating octets
 
 ### Instructions
 
