@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/10 11:19:18 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/15 15:00:44 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,7 @@ void	err(const char **av, int i, int ac)
 		exit (1);
 }
 
-void	repeat(t_node *a, int *tmp)
-{
-	while (a != NULL)
-	{
-		if (*(int *)a->content == *tmp)
-			error_msg ("Error", 1);
-		else
-			a = a->next;
-	}
-}
-
+void	repeat(
 void	check_int_max_min(const char *str)
 {
 	long long int	num;

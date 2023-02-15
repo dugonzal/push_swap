@@ -1,6 +1,18 @@
 {
 	"files.associations": {
 		"libft.h": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"atomic": "c",
+		"*.tcc": "c",
+		"deque": "c",
+		"list": "c",
+		"string": "c",
+		"unordered_map": "c",
+		"unordered_set": "c",
+		"vector": "c",
+		"fstream": "c",
+		"limits": "c",
+		"sstream": "c",
+		"system_error": "c"
 	}
 }
