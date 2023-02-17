@@ -6,50 +6,69 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:30:10 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/17 12:51:52 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/17 18:09:26 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-const char **two_arguments(const char **av)
+const char	**two_arguments(const char **av)
 {
-	char **str;
+	char	**str;
 
 	str = ft_split(av[1], ' ');
 	av = (const char **)str;
 	return (av);
 }
 
-int *parser(const char **av, int ac)
+t_node	*ft_new_node(int content)
 {
-	int i;
-	int j;
-	int *tmp;
+	t_node	*new;
 
-	i = 1;
-	j = 0;
- 	if (ac == 2)
-	{
-		ac = ft_count_words(av[1], ' ');
-		av = two_arguments(av);
-		i = 0;
-	}
-	tmp = (int *)malloc(sizeof(int) * (ac + 1));
-	if (!tmp)
+	new = (t_node *)malloc(sizeof(t_node));
+	if (!new)
 		return (NULL);
-	while (i < ac)
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+
+t_node	**ft_lstadd_back_node(t_node **lst, t_node *new)
+{
+	t_node	*tmp;
+
+	if (!lst)
+		return (lst);
+	tmp = *lst;
+	printf("tmp->content: %d, ", new->content);
+	while (tmp)
+		tmp = tmp->next;
+	tmp->next = new;
+	return (lst);
+}
+
+t_node	**parser(int ac, const char **av)
+{
+	t_node	**a;
+	t_node	*new;
+	int		i;
+	int		tmp;
+
+	i = 0;
+	if (ac == 2)
+		av = two_arguments(av);
+	a = (t_node **)malloc(sizeof(t_node));
+	if (!a)
+		return (NULL);
+	*a = NULL;
+	while (av[i])
 	{
-		check_error_parser(av, i, ac);
-		tmp[j] = ft_atoi(av[i]);
+		tmp = ft_atoi(av[i]);
+		//check_int_max_min(av[i]);
+		if (repeat(a, tmp))
+			error("Error");
+		new = ft_new_node(tmp);
+		ft_lstadd_back_node(a, new);
 		i++;
-		j++;
 	}
-	tmp[j] = '\0';
-	if ((is_order(tmp)) == 1)
-	{
-		free(tmp);
-		exit (1);
-	}
-	return (tmp);
+	return (a);
 }

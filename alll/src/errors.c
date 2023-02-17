@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/15 15:00:44 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/17 12:12:13 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	err(const char **av, int i, int ac)
 		exit (1);
 }
 
-void	repeat(
 void	check_int_max_min(const char *str)
 {
 	long long int	num;

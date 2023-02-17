@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 12:15:09 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/17 12:55:32 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/17 17:57:31 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error(char *str)
 	exit (EXIT_FAILURE);
 }
 
-void	check_error_parser(const char **av, int i, int ac)
+void		check_error_parser(const char **av, int i, int ac)
 {
 	int	j;
 
@@ -28,18 +28,19 @@ void	check_error_parser(const char **av, int i, int ac)
 		if (av[i][j] == '-' || av[i][j] == '+')
 		{
 			if (av[i][j + 1] == '+' || av[i][j + 1] == '-')
-				error("tiene dos signos seguidos");
+				error(" hay un signo de mas");
 			else
 				j++;
 		}
 		if (!ft_isdigit(av[i][j]))
-			error ("no es un numero");
+			error ("hay un caracter que no es un numero");
 		check_int_max_min(av[i]);
 		j++;
 	}
 	if (ac == 2)
 		exit (1);
 }
+
 
 void	check_int_max_min(const char *str)
 {

@@ -6,24 +6,22 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:04:12 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/17 12:45:31 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/17 17:47:54 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-int is_order(int *stack_a)
+/*
+void is_order(t_node *stack_a)
 {
-	int i;
+	t_node *tmp;
 
-	i = 0;
-	while (stack_a[i])
+	tmp = stack_a;
+	while (tmp->next)
 	{
-		if (stack_a[i] > stack_a[i + 1])
-			i++;
-		else
-			return (1);
+		if (tmp->content > tmp->next->content)
 	}
-	return (0);
+
 }
+ */

@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:06:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/17 12:54:41 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/17 18:06:06 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,18 @@
 
 #include "../libft/include/libft.h"
 
+typedef struct s_node
+{
+	int 			index;
+	int				content;
+	struct s_node	*next;
+}				t_node;
+
 void		error(char *str);
 void		check_error_parser(const char **av, int i, int ac);
 void		check_int_max_min(const char *str);
-int			*parser(const char **av, int ac);
+t_node		**parser(int ac, const char **av);
 const char	**two_arguments(const char **av);
-int			is_order(int *stack_a);
+void		is_order(t_node *stack_a);
+int			repeat(t_node **a, int tmp);
 #endif

@@ -13,6 +13,16 @@
 		"fstream": "c",
 		"limits": "c",
 		"sstream": "c",
-		"system_error": "c"
+		"system_error": "c",
+		"random": "c",
+		"iostream": "c",
+		"istream": "c",
+		"new": "c",
+		"ostream": "c",
+		"ratio": "c",
+		"stdexcept": "c",
+		"streambuf": "c",
+		"functional": "c",
+		"*.inc": "c"
 	}
 }
