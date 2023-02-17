@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/15 13:18:28 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/17 21:23:21 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	order_check(t_node **a)
 	tmp = *a;
 	while (tmp->next)
 	{
-		if (*(int *)tmp->content > *(int *)tmp->next->content)
+		if (tmp->content > tmp->next->content)
 			return (0);
 		tmp = tmp->next;
 	}
@@ -30,26 +30,14 @@ int	get_min(t_node *a)
 {
 	int	min;
 
-	min = *(int *)a->content;
+	min = a->content;
 	while (a)
 	{
-		if (*(int *)a->content < min)
-			min = *(int *)a->content;
+		if (a->content < min)
+			min = a->content;
 		a = a->next;
 	}
 	return (min);
-}
-
-void	ver(t_node **a)
-{
-	printf ("\n");
-	while (*a)
-	{
-		printf ("<content>%d \n", *(*a)->content);
-		//printf ("<index>(%d) \n", a->index);
-		*(*a) = *(*a)->next;
-	}
-	printf ("\n");
 }
 
 void clear(t_node **head)
@@ -61,6 +49,28 @@ void clear(t_node **head)
 	{
 		if (tmp)
 			free (tmp);
+		tmp = tmp->next;
+	}
+}
+
+int ft_sizechar(const char **av)
+{
+	int i;
+
+	i = 0;
+	while (av[i] != NULL)
+		i++;
+	return (i);
+}
+
+void	ver(t_node **a)
+{
+	t_node *tmp;
+
+	tmp = *a;
+	while (tmp != NULL)
+	{
+		printf ("[%d]\n", tmp->content);
 		tmp = tmp->next;
 	}
 }
