@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 15:05:55 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/17 12:47:00 by ciclo            ###   ########.fr       */
+/*   Created: 2023/02/16 14:04:12 by ciclo             #+#    #+#             */
+/*   Updated: 2023/02/17 12:45:31 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 
-/*
-	--- voy hacer primero el push swap con arrays para entenderlo mejor
-		luego con listas, pero ahora mismo no lo veo del todo claro
-	creo que sea como sea tine
-*/
-
-int	main(int ac, const char **av)
+int is_order(int *stack_a)
 {
+	int i;
 
-	int *stack_a;
-	int *stack_b;
-
-	(void)stack_b;
-	stack_a = NULL;
-	stack_b = NULL;
-	stack_a = parser(av, ac);
-	while (*stack_a)
+	i = 0;
+	while (stack_a[i])
 	{
-		printf("[%d]\n", *stack_a);
-		stack_a++;
+		if (stack_a[i] > stack_a[i + 1])
+			i++;
+		else
+			return (1);
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
