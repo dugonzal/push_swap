@@ -6,80 +6,73 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/17 21:09:59 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/18 22:48:27 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* void ft_swap(int *a, int *b)
+int	get_max(t_node *ac)
 {
-	int tmp;
+	int	max;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	max = ac->content;
+	while (ac)
+	{
+		if (ac->content > max)
+			max = ac->content;
+		ac = ac->next;
+	}
+	return (max);
 }
 
-void	sort_numbers(int **sorted, t_node **head, int size)
+void	sort(t_node **a, t_node **b)
 {
+	int	size;
 	int i;
 	int j;
-	int min_index;
-	t_node *tmp;
-	int tmp_sorted;
 
-	tmp_sorted = *sorted;
-	tmp = *head;
 	i = 0;
-	while (tmp != NULL)
+	size = ft_size (*a);
+	while (!order_check(a))
 	{
-		tmp_sorted = tmp->content;
-		tmp = tmp->next;
-	}
-	j = 0;
-	i = -1;
-	while (++i < (size - 1))
-	{
-		min_index = i;
-		j = i;
-		while (++j < size)
-			if (sorted[j] < sorted[min_index])
-				min_index = j;
-		if (min_index != i)
-			ft_swap(*&sorted[i], *&sorted[min_index]);
-	}
-	(void)tmp_sorted;
-}
- */
-int ft_size(t_node **head)
-{
-	t_node *tmp;
-	int i;
-
-	tmp = *head;
-	i = 0;
-	while (tmp != NULL)
-	{
+		j = 0;
+		if ((*a)->index > (*a)->next->index)
+			swap (a, "sa");
+		while (j < size)
+		{
+			if ((((*a)->index >> i) & 1) == 1)
+				rotate (a, "ra");
+			else
+			{
+				if (order_check (a) && ft_size(*b) == 0)
+					return ;
+				else
+					push_b (a, b);
+			}
+			j++;
+		}
 		i++;
-		tmp = tmp->next;
+		while (*b)
+			push_a (a, b);
 	}
-	return (i);
 }
-
 
 int	main(int ac, const char **av)
 {
 	t_node	**a;
 	t_node	**b;
 
-	ft_memset(&a, 0, sizeof(t_node));
-	ft_memset(&b, 0, sizeof(t_node));
 	a = (t_node **)malloc(sizeof(t_node *));
 	b = (t_node **)malloc(sizeof(t_node *));
+	ft_memset(a, 0, sizeof(t_node *));
+	ft_memset(b, 0, sizeof(t_node *));
  	parser(a, ac, av);
-	ver (a);
-	//clear(a);
+	sort(a, b);
+
+	//ver (a);
+
+	//clear(b);
 	//clear(b);
 	exit (0);
 }

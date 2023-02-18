@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/17 21:23:21 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/18 22:10:43 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,22 @@ void	ver(t_node **a)
 	tmp = *a;
 	while (tmp != NULL)
 	{
-		printf ("[%d]\n", tmp->content);
+		printf ("content: -> [%d] ", tmp->content);
+		printf ("index: -> {%d}\n", tmp->index);
 		tmp = tmp->next;
 	}
+	sleep (1);
+}
+
+int ft_size(t_node *head)
+{
+	int i;
+
+	i = 0;
+	while (head != NULL)
+	{
+		i++;
+		head = head->next;
+	}
+	return (i);
 }
