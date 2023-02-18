@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/18 21:56:36 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/18 23:02:11 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void		rotate_a_b(t_node **stack_a, t_node **stack_b);
 void		reverse_rotate(t_node **stack, char *s);
 void		reverse_rotate_a_b(t_node **stack_a, t_node **stack_b);
 
-
+void	sort(t_node **a, t_node **b);
+void	alg(t_node **a, t_node **b);
 // index prototype
 void		index_stack(t_node **a);
 int			get_max(t_node *a);
@@ -57,5 +58,6 @@ void		clear(t_node **head);
 int			ft_sizechar(const char **av);
 int			ft_size(t_node *head);
 int			get_min(t_node *ac);
+
 
 #endif

@@ -14,5 +14,6 @@
 		"limits": "c",
 		"sstream": "c",
 		"system_error": "c"
-	}
+	},
+	"C_Cpp.errorSquiggles": "disabled"
 }

@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/18 22:10:43 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/18 23:08:48 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	get_min(t_node *a)
 {
 	int	min;
 
-	min = a->content;
+	min = a->index;
 	while (a)
 	{
-		if (a->content < min)
-			min = a->content;
+		if (a->index < min)
+			min = a->index;
 		a = a->next;
 	}
 	return (min);
