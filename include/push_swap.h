@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/20 02:35:40 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 10:12:04 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void		reverse_rotate(t_node **stack, char *s);
 void		reverse_rotate_a_b(t_node **stack_a, t_node **stack_b);
 
 void		sort(t_node **a, t_node **b);
+void		small_alg(t_node **a);
 void		alg(t_node **a, t_node **b);
 // index prototype
 void		index_stack(t_node **a);
