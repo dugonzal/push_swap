@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/18 22:15:54 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/20 01:19:36 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,34 +42,32 @@ static const char	**two_arguments(const char **av)
 
 static t_node	*ft_new_node(int content)
 {
-	t_node *new;
+	t_node	*new;
 
 	new = (t_node *)malloc(sizeof(t_node));
+	if (!new)
+		return (NULL);
 	new->index = -1;
 	new->content = content;
 	new->next = NULL;
 	return (new);
 }
 
-static t_node **ft_lstadd_back_node(t_node **a, t_node *new)
+static void	ft_lstadd_back_node(t_node **a, t_node *new)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!(*a))
-	{
 		(*a) = new;
-		return (a);
-	}
 	tmp = *a;
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;
-	return (a);
 }
 
 void	parser(t_node **a, int ac, const char **av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (ac == 2)
@@ -88,7 +86,3 @@ void	parser(t_node **a, int ac, const char **av)
 		exit(0);
 	index_stack(a);
 }
-
-
-
-

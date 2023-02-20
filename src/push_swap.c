@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/18 23:08:28 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/20 01:20:38 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	get_max(t_node *ac)
 	return (max);
 }
 
-
-
 int	main(int ac, const char **av)
 {
 	t_node	**a;
@@ -37,16 +35,14 @@ int	main(int ac, const char **av)
 	b = (t_node **)malloc(sizeof(t_node *));
 	ft_memset(a, 0, sizeof(t_node *));
 	ft_memset(b, 0, sizeof(t_node *));
- 	parser(a, ac, av);
+	parser(a, ac, av);
 	if (ft_size(*a) < 11)
 		alg (a, b);
 	else
 		sort(a, b);
-	//ver (a);
-
-	//clear(b);
-	//clear(b);
-	exit (0);
+	clear(a);
+	clear(b);
+	exit (EXIT_SUCCESS);
 }
 
 /*
