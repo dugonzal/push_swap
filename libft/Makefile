@@ -6,7 +6,7 @@
 #    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2023/02/20 02:11:07 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/02/20 02:28:03 by dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,38 +55,38 @@ OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
 OBJSF		=	.cache_exists
 
 # Rules for the main program and the objects files
-$(NAME):	$(OBJS)
-			make -C ft_printf
-			mv ft_printf/printf.a $(NAME)
-			$(AR) $(NAME) $(OBJS)
-			echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
+$(NAME): $(OBJS)
+	@make -C ft_printf
+	@mv ft_printf/printf.a $(NAME)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)# | $(INCLUDES) directory if you want to use header files
-		@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJSF):#  create the directory for the objects if it doesn't exist mkdir -p para que no de error si ya existe
-			mkdir	-p $(OBJS_DIR)
-			mkdir	-p  $(OBJS_DIR)$(FTIS_DIR)
-			mkdir	-p $(OBJS_DIR)$(FTMEM_DIR)
-			mkdir	-p $(OBJS_DIR)$(FTPUT_DIR)
-			mkdir	-p $(OBJS_DIR)$(FTTO_DIR)
-			mkdir	-p $(OBJS_DIR)$(FTSTR_DIR)
-			mkdir  -p $(OBJS_DIR)$(FTLST_DIR)
+	@mkdir	-p $(OBJS_DIR)
+	@mkdir	-p  $(OBJS_DIR)$(FTIS_DIR)
+	@mkdir	-p $(OBJS_DIR)$(FTMEM_DIR)
+	@mkdir	-p $(OBJS_DIR)$(FTPUT_DIR)
+	@mkdir	-p $(OBJS_DIR)$(FTTO_DIR)
+	@mkdir	-p $(OBJS_DIR)$(FTSTR_DIR)
+	@mkdir  -p $(OBJS_DIR)$(FTLST_DIR)
 
 all:		$(NAME)
 
 clean:
-			$(RM)	$(OBJS_DIR)
-			make clean -C ft_printf
-			$(RM)	$(OBJSF)
-			echo "Libft objects deleted!"
+	@$(RM)	$(OBJS_DIR)
+	@make clean -C ft_printf
+	@$(RM)	$(OBJSF)
+	@echo "Libft objects deleted!"
 
 fclean:		clean
-			make fclean -C ft_printf
-			$(RM)	$(NAME)
-			@echo "libft cleaned!"
+	@make fclean -C ft_printf
+	@$(RM)	$(NAME)
+	@echo "libft cleaned!"
 
 re:			fclean all
-			@echo "libft recompiled!"
+	@echo "libft recompiled!"
 
 .PHONY:		all clean fclean re

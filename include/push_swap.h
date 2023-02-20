@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:53:27 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/20 01:21:26 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 02:35:40 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ typedef struct s_node
 void		parser(t_node **a, int ac, const char **av);
 // error prototype
 void		error_msg(void);
-void		err(const char **av, int i);
+void		err(const char **av, int i, t_node **a);
 void		repeat(t_node **a, int tmp);
-void		ft_max_min(const char *str);
+void		ft_max_min(const char *str, t_node **a);
 void		ver(t_node **a);
 int			order_check(t_node **a);
 // moves prototype
@@ -58,5 +58,5 @@ void		clear(t_node **head);
 int			ft_sizechar(const char **av);
 int			ft_size(t_node *head);
 int			get_min(t_node *ac);
-
+t_node		*lst_node(t_node *a);
 #endif

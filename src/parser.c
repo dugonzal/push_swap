@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 01:23:23 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 02:38:57 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ static void	repeat_check(t_node **a)
 		while (tmp2)
 		{
 			if (tmp->content == tmp2->content)
+			{
+				clear (a);
 				error_msg();
+			}
 			tmp2 = tmp2->next;
 		}
 		tmp = tmp->next;
@@ -81,13 +84,16 @@ void	parser(t_node **a, int ac, const char **av)
 		i = 1;
 	while (av[i])
 	{
-		err(av, i);
-		ft_max_min(av[i]);
+		err(av, i, a);
+		ft_max_min(av[i], a);
 		ft_lstadd_back_node(a, ft_new_node(ft_atoi(av[i])));
 		repeat_check(a);
 		i++;
 	}
 	if (ft_sizechar(av) < 2 || order_check(a) == 1)
+	{
+		clear(a);
 		exit(0);
+	}
 	index_stack(a);
 }

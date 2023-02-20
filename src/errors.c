@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/18 21:58:11 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/20 02:35:28 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error_msg(void)
 	exit (1);
 }
 
-void	err(const char **av, int i)
+void	err(const char **av, int i, t_node **a)
 {
 	int	j;
 
@@ -28,16 +28,22 @@ void	err(const char **av, int i)
 		if (av[i][j] == '-' || av[i][j] == '+')
 		{
 			if (av[i][j + 1] == '+' || av[i][j + 1] == '-')
+			{
+				clear (a);
 				error_msg();
+			}
 			j++;
 		}
 		if (!ft_isdigit(av[i][j]))
+		{
+			clear (a);
 			error_msg ();
+		}
 		j++;
 	}
 }
 
-void	ft_max_min(const char *str)
+void	ft_max_min(const char *str, t_node **a)
 {
 	long int	num;
 
@@ -45,5 +51,8 @@ void	ft_max_min(const char *str)
 	while (*str)
 		num = num * 10 + *str++ - 48;
 	if (num > INT_MAX || num < INT_MIN)
+	{
+		clear (a);
 		error_msg();
+	}
 }
