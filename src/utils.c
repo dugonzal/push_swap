@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 01:21:09 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 02:39:13 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,4 @@ void	ver(t_node **a)
 		tmp = tmp->next;
 	}
 	sleep (1);
-}
-
-int	ft_size(t_node *head)
-{
-	int	i;
-
-	i = 0;
-	while (head != NULL)
-	{
-		i++;
-		head = head->next;
-	}
-	return (i);
 }

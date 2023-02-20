@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:59:32 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/18 21:14:52 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/20 02:39:21 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,17 @@ void	index_stack(t_node **a)
 		tmp->index = ++i;
 		tmp = get_next_min(a);
 	}
+}
+
+int	ft_size(t_node *head)
+{
+	int	i;
+
+	i = 0;
+	while (head != NULL)
+	{
+		i++;
+		head = head->next;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 #    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2023/02/20 02:11:36 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/02/20 02:28:18 by dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,14 +30,14 @@ OBJ		:= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 
 $(NAME): $(OBJ_DIR) $(OBJ)
-	make -C libft
-	mkdir -p bin
-	mv libft/libft.a ./bin
-	$(CC) $(FLAGS) $(SRC) bin/* -o $(NAME)
+	@make -C libft
+	@mkdir -p bin
+	@mv libft/libft.a ./bin
+	@$(CC) $(FLAGS) $(SRC) bin/* -o $(NAME)
 	@echo "$@ done compile"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
-	$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 # -c compila pero no linkea
 # -o especifica el nombre del archivo objetivo
 # $< es el nombre del archivo fuente: en este caso seria el nombre de la regla
@@ -46,28 +46,28 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
 all: $(NAME) $(OBJ)
 
 $(OBJ_DIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 
 clean:
-	make clean -C libft
-	$(RM) $(NAME)
+	@make clean -C libft
+	@$(RM) $(NAME)
 cache:
-	rm -rf obj
+	@rm -rf obj
 
 fclean:  cache clean
-	make fclean -C libft
-	$(RM) bin
+	@make fclean -C libft
+	@$(RM) bin
 
 re: fclean all
 
 
 time :
-	$(T) ./$(NAME) 3 2 1
+	@$(T) ./$(NAME) 3 2 1
 val:
-	$(val) ./$(NAME) 3 2 1
+	@$(val) ./$(NAME) 3 2 1
 
 sani:
-	$(CC) $(SANI) $(FLAGS) $(SRC) bin/* -o $(NAME)
+	@$(CC) $(SANI) $(FLAGS) $(SRC) bin/* -o $(NAME)
 
 .PHONY: clean fclean re all
