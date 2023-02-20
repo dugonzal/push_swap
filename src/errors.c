@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:34:29 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 02:35:28 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 09:31:05 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,5 @@ void	err(const char **av, int i, t_node **a)
 			error_msg ();
 		}
 		j++;
-	}
-}
-
-void	ft_max_min(const char *str, t_node **a)
-{
-	long int	num;
-
-	num = 0;
-	while (*str)
-		num = num * 10 + *str++ - 48;
-	if (num > INT_MAX || num < INT_MIN)
-	{
-		clear (a);
-		error_msg();
 	}
 }
