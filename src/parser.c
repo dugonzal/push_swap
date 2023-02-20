@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 02:45:06 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 09:30:03 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	parser(t_node **a, int ac, const char **av)
 	while (av[i])
 	{
 		err(av, i, a);
-		ft_max_min(av[i], a);
 		ft_lstadd_back_node(a, ft_new_node(ft_atoi(av[i])));
 		repeat_check(a);
 		i++;
