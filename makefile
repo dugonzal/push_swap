@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
+#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2023/02/18 15:13:54 by ciclo            ###   ########.fr        #
+#    Updated: 2023/02/20 01:52:51 by dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,13 @@ $(OBJ_DIR):
 all: $(NAME)
 
 clean:
-	@$(RM) $(OBJ_DIR)
 	@make clean -C libft
-	@$(RM) libft.a
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
 	@make fclean -C libft
-	@$(RM) bin
 	@$(RM) $(NAME)
-
+	@$(RM) bin
 re: fclean all
 
 val:

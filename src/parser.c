@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:14:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 01:19:36 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 01:23:23 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,13 @@ static void	ft_lstadd_back_node(t_node **a, t_node *new)
 {
 	t_node	*tmp;
 
-	if (!(*a))
-		(*a) = new;
+	if (!new)
+		return ;
+	if (!*a)
+	{
+		*a = new;
+		return ;
+	}
 	tmp = *a;
 	while (tmp->next)
 		tmp = tmp->next;
