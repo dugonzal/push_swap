@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:49:48 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/03 13:31:59 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/20 09:31:38 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 /// @return The converted int.
 int	ft_atoi(const char *str)
 {
-	int	nbr;
-	int	neg;
+	long int	nbr;
+	int			neg;
 
 	nbr = 0;
 	neg = 1;
@@ -31,5 +31,10 @@ int	ft_atoi(const char *str)
 		str++;
 	while (*str >= '0' && *str <= '9' && *str)
 		nbr = nbr * 10 + *str++ - 48;
-	return (nbr * neg);
+	if (nbr < -2147483648 || nbr > +2147483647)
+	{
+		printf ("Error\n");
+		exit (1);
+	}
+	return ((int)nbr * neg);
 }
