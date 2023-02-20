@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/20 02:46:09 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 10:17:34 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ int	get_max(t_node *ac)
 	return (max);
 }
 
+/// @brief
+/// @param ac
+/// @param av
+/// @return
 int	main(int ac, const char **av)
 {
 	t_node	**a;
@@ -40,6 +44,7 @@ int	main(int ac, const char **av)
 		alg (a, b);
 	else
 		sort(a, b);
+	ver (a);
 	clear(a);
 	clear(b);
 	exit (EXIT_SUCCESS);

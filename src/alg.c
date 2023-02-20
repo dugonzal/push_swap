@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 02:24:30 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/20 10:15:51 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	sort(t_node **a, t_node **b)
 	while (!order_check(a))
 	{
 		j = 0;
-		if ((*a)->index > (*a)->next->index)
-			swap (a, "sa");
 		while (j < size)
 		{
 			if ((((*a)->index >> i) & 1) % 2)
@@ -44,19 +42,22 @@ void	small_alg(t_node **a)
 	t_node	*tmp;
 
 	tmp = *a;
-	if (ft_size (*a) == 3)
+	if (ft_size(*a) < 3)
 	{
-		if ((*a)->index > (*a)->next->index && \
-		(*a)->index > (*a)->next->next->index)
+		if (((*a)->index > (*a)->next->index && \
+			(*a)->index > (*a)->next->next->index))
 			rotate(a, "ra");
+		if (((*a)->index < (*a)->next->index && \
+			(*a)->index > (*a)->next->next->index))
+			reverse_rotate(a, "rra");
 		if ((*a)->index > (*a)->next->index)
 			swap(a, "sa");
 		if ((*a)->index > (*a)->next->index)
 			rotate(a, "ra");
-		if ((*a)->index > (*a)->next->index)
+		else if ((*a)->index > (*a)->next->index)
 			swap(a, "sa");
-		return ;
 	}
+	return ;
 }
 
 void	alg(t_node **a, t_node **b)
