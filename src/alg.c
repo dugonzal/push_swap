@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/18 23:11:53 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/20 01:20:03 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	sort(t_node **a, t_node **b)
 {
 	int	size;
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	size = ft_size (*a);
@@ -30,12 +30,7 @@ void	sort(t_node **a, t_node **b)
 			if ((((*a)->index >> i) & 1) % 2)
 				rotate (a, "ra");
 			else
-			{
-				if (order_check (a) && ft_size(*b) == 0)
-					return ;
-				else
-					push_b (a, b);
-			}
+				push_b (a, b);
 			j++;
 		}
 		i++;

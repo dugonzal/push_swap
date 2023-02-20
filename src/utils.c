@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/18 23:08:48 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/20 01:21:09 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	get_min(t_node *a)
 	return (min);
 }
 
-void clear(t_node **head)
+void	clear(t_node **head)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	tmp = *head;
 	while (tmp != 0)
@@ -53,9 +53,9 @@ void clear(t_node **head)
 	}
 }
 
-int ft_sizechar(const char **av)
+int	ft_sizechar(const char **av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (av[i] != NULL)
@@ -65,7 +65,7 @@ int ft_sizechar(const char **av)
 
 void	ver(t_node **a)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	tmp = *a;
 	while (tmp != NULL)
@@ -77,9 +77,9 @@ void	ver(t_node **a)
 	sleep (1);
 }
 
-int ft_size(t_node *head)
+int	ft_size(t_node *head)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (head != NULL)
