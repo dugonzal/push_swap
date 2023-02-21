@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:04:51 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/21 06:37:51 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <string.h>
 # include <stdio.h>
 # include "../ft_printf/include/ft_printf.h"
+# define GREEN	"\033[0;32m"
+# define RED 	"\033[1;31m"
+# define GREY 	"\033[0;90m"
+# define CYAN	"\033[1;96m"
+# define RESET 	"\033[0m"
 
 typedef struct s_list
 {
