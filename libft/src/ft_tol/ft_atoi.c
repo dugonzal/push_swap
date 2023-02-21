@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:49:48 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 09:31:38 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/21 06:39:20 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 		nbr = nbr * 10 + *str++ - 48;
 	if (nbr < -2147483648 || nbr > +2147483647)
 	{
-		printf ("Error\n");
+		printf (RED"Error\n"RESET);
 		exit (1);
 	}
 	return ((int)nbr * neg);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/20 10:17:34 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:07:02 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,12 @@ int	main(int ac, const char **av)
 	ft_memset(a, 0, sizeof(t_node *));
 	ft_memset(b, 0, sizeof(t_node *));
 	parser(a, ac, av);
-	if (ft_size(*a) < 11)
+ 	if (ft_size(*a) < 11)
 		alg (a, b);
 	else
 		sort(a, b);
-	ver (a);
-	clear(a);
-	clear(b);
+	clear (a);
+	clear (b);
 	exit (EXIT_SUCCESS);
 }
 
