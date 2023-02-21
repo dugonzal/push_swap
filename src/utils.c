@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:37:41 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/20 02:39:13 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/21 06:34:19 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,15 @@ int	get_min(t_node *a)
 
 void	clear(t_node **head)
 {
-	t_node	*tmp;
+	t_node *tmp;
 
-	tmp = *head;
-	while (tmp != 0)
+	tmp = NULL;
+	if (tmp)
 	{
-		if (tmp)
-			free (tmp);
-		tmp = tmp->next;
+		tmp = *head;
+		clear(&tmp->next);
+		free(tmp);
+		tmp = NULL;
 	}
 }
 
