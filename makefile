@@ -6,7 +6,7 @@
 #    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2023/02/20 02:28:18 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/02/23 20:27:37 by dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ OBJ		:= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 
 $(NAME): $(OBJ_DIR) $(OBJ)
+	norminette
 	@make -C libft
 	@mkdir -p bin
 	@mv libft/libft.a ./bin
