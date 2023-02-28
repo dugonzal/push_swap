@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
+#    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 20:54:24 by ciclo             #+#    #+#              #
-#    Updated: 2023/02/23 20:27:37 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/02/28 11:14:27 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,7 @@ SRC_FILES := push_swap utils errors reverse_rotate swap push rotate alg parser i
 SRC		:= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ		:= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
-
 $(NAME): $(OBJ_DIR) $(OBJ)
-	norminette
 	@make -C libft
 	@mkdir -p bin
 	@mv libft/libft.a ./bin
@@ -39,16 +37,11 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
 	@$(CC) $(FLAGS) -c $< -o $@
-# -c compila pero no linkea
-# -o especifica el nombre del archivo objetivo
-# $< es el nombre del archivo fuente: en este caso seria el nombre de la regla
-# $@ es el nombre del archivo objetivo: en este caso seria el nombre de la regla
 
 all: $(NAME) $(OBJ)
 
 $(OBJ_DIR):
 	@mkdir -p $@
-
 
 clean:
 	@make clean -C libft
