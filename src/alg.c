@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:34:58 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/23 19:26:35 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:13:40 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,13 @@ void	sort(t_node **a, t_node **b)
 	size = ft_size (*a);
 	while (!order_check(a))
 	{
-		j = 0;
-		while (j < size)
+		j = -1;
+		while (++j < size)
 		{
-			if ((((*a)->index >> i) & 1) % 2)
+			if (((*a)->index >> i) % 2)
 				rotate (a, "ra");
 			else
 				push_b (a, b);
-			j++;
 		}
 		i++;
 		while (*b)
@@ -37,7 +36,7 @@ void	sort(t_node **a, t_node **b)
 	}
 }
 
-void	p(t_node **a)
+static void	first_steps(t_node **a)
 {
 	if (ft_size(*a) > 2 && (*a)->index > (*a)->next->index && \
 	(*a)->index > (*a)->next->next->index)
@@ -53,9 +52,7 @@ void	alg(t_node **a, t_node **b)
 
 	max = get_max(*a);
 	min = get_min(*a);
-	p (a);
-	if (order_check(a))
-		return ;
+	first_steps (a);
 	while (!order_check(a))
 	{
 		if ((*a)->index == max)
