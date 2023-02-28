@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:09:03 by vscode            #+#    #+#             */
-/*   Updated: 2023/02/28 11:10:05 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/28 11:15:59 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int	main(int ac, const char **av)
 		alg (a, b);
 	else
 		sort(a, b);
-	ver (a);
 	clear (a);
 	clear (b);
 	exit (EXIT_SUCCESS);
